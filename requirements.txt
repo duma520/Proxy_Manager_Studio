@@ -1,0 +1,29 @@
+# 代理节点管理控制台（Proxy Manager Studio）依赖清单
+# 环境：Windows 10/11 + Python 3.10+（开发与验证环境：Python 3.10.11）
+
+# 界面（必需）
+PySide6>=6.5
+
+# HTTP 请求（订阅更新 / 核心下载；缺失时程序会自动回退标准库 urllib）
+requests>=2.28
+
+# .env 解析（缺失时使用内置解析器，功能等价）
+python-dotenv>=1.0
+
+# Clash YAML 导入（缺失时无法导入 Clash 配置文件，其他功能不受影响）
+PyYAML>=6.0
+
+# 二维码生成（缺失时“分享二维码”按钮会提示不可用）
+qrcode>=7.4
+
+# 残留核心进程清理（精确归属比对；缺失时退化为 PowerShell 查询路径，查不到就不动手）
+psutil>=5.9
+
+# Windows 注册表 / 系统调用（README 说明为可选；标准库 winreg 已覆盖主要功能）
+pywin32>=305
+
+# 以下为打包工具（仅发布需要，可不安）
+# nuitka>=2.0
+# ordered-set
+# zstandard
+# pyinstaller>=6.0
